@@ -11,6 +11,13 @@ hbase进行major compact的时候会占用大量资源，集群的读写性能�
 3.通过crontab来控制脚本的运行
 
 10 1 * * * bash /data/bigdata/bin/hbase-major-compaction.sh >> /data/bigdata/logs/hbase/hbase-major-compaction-$(date +"\%Y\%m").log 2>&1 &
+
+
 10 0 * * 0 bash /data/bigdata/bin/get-daily-table-list.sh >> /data/bigdata/logs/hbase/get-daily-table-list-$(date +"\%Y\%m").log 2>&1 &
 
 文件目录树如图所示，脚本需要在hmaster所在的机器执行。
+
+
+
+
+
